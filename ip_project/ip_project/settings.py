@@ -1,4 +1,5 @@
 
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -7,7 +8,7 @@ SECRET_KEY = 'ibzeid3!4d3un-k5u1y$gbv*coxlh6qk$-yfqk-tz&vgnjmivn'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['eng-project-3sem.std-928.ist.mospolytech.ru']
 
 INSTALLED_APPS = [
     'main',
@@ -86,6 +87,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
