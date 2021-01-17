@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -7,8 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-		<link rel="stylesheet" href="{% static 'windowHi/css/style.css' %}">
-	<title>Добро пожаловать</title>
+	<title>Компании</title>
 </head>
 
 <body>
@@ -34,9 +32,17 @@
 			</div>
 		</div>
 	</nav>
-	<div class="d-flex flex-column align-items-center">
-		<h1 class="my-5">Добро пожаловать в центр карьеры университета!</h1>
-		<img class="mt-5" src="{% static 'windowHi/img/logo.png' %}" alt="">
+	<h1 class="my-5 text-center">Список компаний</h1>
+	<div class="container">
+		{% for el in cmpData %}
+		<div class="alert alert-secondary my-5">
+			<h3><b>Название компании:</b> {{el.name}}</h3>
+			<h3><b>Описание:</b> {{el.description}}</h3>
+			<h3><b>E-mail:</b> {{el.mail}}</h3>
+			<h3><b>Номер телефона:</b> {{el.phone}}</h3>
+			<h3><b>ФИО представителя:</b> {{el.fio}}</h3>
+		</div>
+		{% endfor %}
 	</div>
 </body>
 

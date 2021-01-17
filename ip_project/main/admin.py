@@ -36,7 +36,7 @@ class UsersResource(resources.ModelResource):
 class UsersAdmin(ImportExportModelAdmin):
     list_display = ("id", "fio", "mail", "login", "password", "id_role")
     list_filter = ("id_role", )
-    search_fields = ("fio__startswith", )
+    search_fields = ("fio", )
     resource_class = UsersResource
 
 class CategoryResource(resources.ModelResource):
@@ -80,7 +80,7 @@ class VacancyAdmin(ImportExportModelAdmin):
                     "responsibilities", "id_category", "id_work", "id_company")
     list_filter = ("name", "requirements", "conditions",
                    "responsibilities", "id_category", "id_work", "id_company")
-    search_fields = ("name__startswith", )
+    search_fields = ("name",)
     resource_class = VacancyResource
 
 class CompanyResource(resources.ModelResource):
@@ -95,7 +95,7 @@ class CompanyAdmin(ImportExportModelAdmin):
     list_display = ("id", "name", "description", "mail", "phone",
                     "fio", "login", "password", "id_role")
     list_filter = ("name", )
-    search_fields = ("name__startswith", )
+    search_fields = ("name", )
     resource_class = CompanyResource
     fields = ('name', 'description', 'fio', 'mail', 'phone', 'id_role',)
 
@@ -110,7 +110,7 @@ class EventResource(resources.ModelResource):
 class EventAdmin(ImportExportModelAdmin):
     list_display = ("id", "name", "date", "id_company")
     list_filter = ("name", "date", "id_company")
-    search_fields = ("name__startswith", )
+    search_fields = ("name", )
     date_hierarchy = ("date")
     resource_class = EventResource
 
@@ -128,11 +128,11 @@ class CourseAdmin(ImportExportModelAdmin):
                     "id_category", "id_company", )
     list_filter = ("name", "duration",
                    "id_category", "id_company")
-    search_fields = ("name__startswith", )
+    search_fields = ("name", )
     resource_class = CourseResource
 
 def make_published(modeladmin, request, queryset):
-    queryset.update(status='p')
+    queryset.update(status='о')
 
 
 make_published.short_description = "Изменить статус на Опубликовано"
@@ -150,7 +150,7 @@ class NewsAdmin(ImportExportModelAdmin):
     list_display = ("id", "name", "description", "date",
                     "id_category", "id_company", "status")
     list_filter = ("id", "name", "id_company", "id_category", "date",)
-    search_fields = ("name__startswith", )
+    search_fields = ("name",)
     date_hierarchy = ("date")
     resource_class = NewsResource
     actions = [make_published]
