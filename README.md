@@ -16,9 +16,9 @@
 
 [Таблица компаний (Все)](http://eng-project-3sem.std-928.ist.mospolytech.ru/api/v1/main/company/)
 
-[Таблица компаний (Создание)](http://eng-project-3sem.std-928.ist.mospolytech.ru/api/v1/main/mains/create/)
-
 [Таблица компаний (Детально)](http://eng-project-3sem.std-928.ist.mospolytech.ru/api/v1/main/detail/1/)
+
+[Таблица компаний (Создание)](http://eng-project-3sem.std-928.ist.mospolytech.ru/api/v1/main/mains/create/)
 
 Задачи:
 
